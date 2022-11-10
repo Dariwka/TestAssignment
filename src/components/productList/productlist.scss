@@ -1,0 +1,15 @@
+@import "../../global.scss";
+
+.productList {
+  margin: auto;
+  width: 95%;
+  text-align: center;
+  height: auto;
+  padding: 20px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+
+  input {
+    margin: 5px;
+  }
+}
