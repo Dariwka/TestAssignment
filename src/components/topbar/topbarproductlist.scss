@@ -1,0 +1,28 @@
+@import "../../global.scss";
+
+.topbar {
+  width: 100%;
+  height: 85px;
+
+  .wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .right {
+      #delete-product-btn {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  .buttonSection {
+    margin-block: auto;
+  }
+}

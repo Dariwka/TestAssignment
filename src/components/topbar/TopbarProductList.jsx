@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import "./topbar.scss";
+import "./topbarproductlist.scss";
 
-const Topbar = () => {
+const TopbarProductList = () => {
   //   const navigate = useNavigate();
 
   //   const goToAddForm = () => {
@@ -37,4 +37,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default TopbarProductList;
