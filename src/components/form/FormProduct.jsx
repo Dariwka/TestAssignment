@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import DvdForm from "./DvdForm";
-import BookForm from "./BookForm";
-import FurnitureForm from "./FurnitureForm";
 import { useForm } from "react-hook-form";
 import "./form.scss";
 
@@ -117,9 +114,102 @@ const FormProduct = () => {
             </Form.Select>
           </Form.Group>
           <Form.Group className="formGroup">
-            {select === "DVD" && <DvdForm />}
-            {select === "Book" && <BookForm />}
-            {select === "Furniture" && <FurnitureForm />}
+            {select === "DVD" && (
+              <>
+                <Form.Group className="mb-3">
+                  <Form.Label>Size (MB) </Form.Label>
+                  <Form.Control
+                    name="size"
+                    id="size"
+                    type="text"
+                    placeholder="MB"
+                    {...register("size", {
+                      required: true,
+                    })}
+                  />
+                  {errors.size && errors.size.type === "required" && (
+                    <p className="errorMsg">Size is required.</p>
+                  )}
+                  <Form.Text className="text-muted">
+                    Please provide in MB.
+                  </Form.Text>
+                </Form.Group>
+              </>
+            )}
+            {select === "Book" && (
+              <>
+                <Form.Group className="mb-3">
+                  <Form.Label>Weight (KG) </Form.Label>
+                  <Form.Control
+                    name="weight"
+                    id="weight"
+                    type="text"
+                    placeholder="kg"
+                    {...register("weight", {
+                      required: true,
+                    })}
+                  />
+                  {errors.weight && errors.weight.type === "required" && (
+                    <p className="errorMsg">Weight is required.</p>
+                  )}
+                  <Form.Text className="text-muted">
+                    Please provide weight in kg format
+                  </Form.Text>
+                </Form.Group>
+              </>
+            )}
+            {select === "Furniture" && (
+              <>
+                <Form.Group className="mb-3">
+                  <Form.Label>Height (CM) </Form.Label>
+                  <Form.Control
+                    name="height"
+                    id="height"
+                    type="text"
+                    placeholder="CM"
+                    {...register("height", {
+                      required: true,
+                    })}
+                  />
+                  {errors.height && errors.height.type === "required" && (
+                    <p className="errorMsg">Height is required.</p>
+                  )}
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Width (CM) </Form.Label>
+                  <Form.Control
+                    name="width"
+                    id="width"
+                    type="text"
+                    placeholder="CM"
+                    {...register("width", {
+                      required: true,
+                    })}
+                  />
+                  {errors.width && errors.width.type === "required" && (
+                    <p className="errorMsg">Width is required.</p>
+                  )}
+                </Form.Group>
+                <Form.Group className="mb-3">
+                  <Form.Label>Length (CM) </Form.Label>
+                  <Form.Control
+                    name="lenght"
+                    id="lenght"
+                    type="text"
+                    placeholder="CM"
+                    {...register("length", {
+                      required: true,
+                    })}
+                  />
+                  {errors.length && errors.length.type === "required" && (
+                    <p className="errorMsg">Length is required.</p>
+                  )}
+                </Form.Group>
+                <Form.Text className="text-muted">
+                  Please provide dimensions in HxWxL format
+                </Form.Text>
+              </>
+            )}
           </Form.Group>
         </Form>
       </div>
